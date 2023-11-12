@@ -13,6 +13,10 @@
 		A31CE4BC2AFE5AF80077D156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31CE4BA2AFE5AF80077D156 /* Main.storyboard */; };
 		A31CE4BE2AFE5AFB0077D156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31CE4BD2AFE5AFB0077D156 /* Assets.xcassets */; };
 		A31CE4C12AFE5AFB0077D156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31CE4BF2AFE5AFB0077D156 /* LaunchScreen.storyboard */; };
+		A31CE50B2B0154D30077D156 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE50A2B0154D30077D156 /* LoginView.swift */; };
+		A31CE50D2B0154E30077D156 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE50C2B0154E30077D156 /* LoginViewController.swift */; };
+		A31CE50F2B0155070077D156 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE50E2B0155070077D156 /* Coordinator.swift */; };
+		A31CE5112B01551F0077D156 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE5102B01551F0077D156 /* LoginCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		A31CE4BD2AFE5AFB0077D156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A31CE4C02AFE5AFB0077D156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A31CE4C22AFE5AFB0077D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A31CE50A2B0154D30077D156 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A31CE50C2B0154E30077D156 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A31CE50E2B0155070077D156 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A31CE5102B01551F0077D156 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		A31CE4B32AFE5AF80077D156 /* appNotifica */ = {
 			isa = PBXGroup;
 			children = (
+				A31CE5062B0154780077D156 /* Source */,
+				A31CE5042B0154590077D156 /* Resource */,
+				A31CE4C22AFE5AFB0077D156 /* Info.plist */,
+			);
+			path = appNotifica;
+			sourceTree = "<group>";
+		};
+		A31CE5042B0154590077D156 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				A31CE4B42AFE5AF80077D156 /* AppDelegate.swift */,
 				A31CE4B62AFE5AF80077D156 /* SceneDelegate.swift */,
 				A31CE4B82AFE5AF80077D156 /* ViewController.swift */,
 				A31CE4BA2AFE5AF80077D156 /* Main.storyboard */,
 				A31CE4BD2AFE5AFB0077D156 /* Assets.xcassets */,
 				A31CE4BF2AFE5AFB0077D156 /* LaunchScreen.storyboard */,
-				A31CE4C22AFE5AFB0077D156 /* Info.plist */,
 			);
-			path = appNotifica;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A31CE5062B0154780077D156 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A31CE5092B0154AE0077D156 /* Controller */,
+				A31CE5082B0154930077D156 /* Coordinator */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A31CE5082B0154930077D156 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A31CE50E2B0155070077D156 /* Coordinator.swift */,
+				A31CE5102B01551F0077D156 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A31CE5092B0154AE0077D156 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A31CE50A2B0154D30077D156 /* LoginView.swift */,
+				A31CE50C2B0154E30077D156 /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +184,10 @@
 			files = (
 				A31CE4B92AFE5AF80077D156 /* ViewController.swift in Sources */,
 				A31CE4B52AFE5AF80077D156 /* AppDelegate.swift in Sources */,
+				A31CE5112B01551F0077D156 /* LoginCoordinator.swift in Sources */,
+				A31CE50F2B0155070077D156 /* Coordinator.swift in Sources */,
+				A31CE50B2B0154D30077D156 /* LoginView.swift in Sources */,
+				A31CE50D2B0154E30077D156 /* LoginViewController.swift in Sources */,
 				A31CE4B72AFE5AF80077D156 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
