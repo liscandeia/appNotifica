@@ -17,6 +17,7 @@
 		A31CE50D2B0154E30077D156 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE50C2B0154E30077D156 /* LoginViewController.swift */; };
 		A31CE50F2B0155070077D156 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE50E2B0155070077D156 /* Coordinator.swift */; };
 		A31CE5112B01551F0077D156 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CE5102B01551F0077D156 /* LoginCoordinator.swift */; };
+		A3E840BF2B0269A0001D0A87 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840BE2B0269A0001D0A87 /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A31CE50C2B0154E30077D156 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A31CE50E2B0155070077D156 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A31CE5102B01551F0077D156 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		A3E840BE2B0269A0001D0A87 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		A31CE5062B0154780077D156 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A3E840BD2B026976001D0A87 /* Extensions */,
 				A31CE5092B0154AE0077D156 /* Controller */,
 				A31CE5082B0154930077D156 /* Coordinator */,
 			);
@@ -109,6 +112,14 @@
 				A31CE50C2B0154E30077D156 /* LoginViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A3E840BD2B026976001D0A87 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3E840BE2B0269A0001D0A87 /* Color+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31CE4B92AFE5AF80077D156 /* ViewController.swift in Sources */,
+				A3E840BF2B0269A0001D0A87 /* Color+.swift in Sources */,
 				A31CE4B52AFE5AF80077D156 /* AppDelegate.swift in Sources */,
 				A31CE5112B01551F0077D156 /* LoginCoordinator.swift in Sources */,
 				A31CE50F2B0155070077D156 /* Coordinator.swift in Sources */,

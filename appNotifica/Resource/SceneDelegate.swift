@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = navigationController;
         //definir qual vai ser minha pag principal
         let coordinator = LoginCoordinator(navigationController: navigationController); //A pag de login foi a escolha da pag principal
-        coordinator.start();    }
+        coordinator.start(); }//iniciando   
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

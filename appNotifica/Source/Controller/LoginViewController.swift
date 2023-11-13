@@ -21,7 +21,8 @@ class LoginViewController: UIViewController {
     //evento para aparecer texto do paragrafo
     override func viewDidLoad() {
         super.viewDidLoad();
-        self.title = "Login";
+        self.title = "Login"; //self. e opcional
         self.navigationController?.navigationBar.prefersLargeTitles = true;
+        view.tintColor = .white
     }
 }
