@@ -24,73 +24,17 @@ class LoginView:UIView  {
     //MARK: - Setup elementos visuais
     func setupVisualElements(){
         
-        //armazenando em constantes as propriedades dos componentes
         //imagem
-        let loginImg : UIImageView = {
-            let img = UIImageView();
-            img.image = UIImage(named: "logo-login"); //nao precisa add caminho
-            img.contentMode = .scaleAspectFit; //aumentar proporcionalmente
-            //nao pode esquecer
-            img.translatesAutoresizingMaskIntoConstraints = false; //para funcionar em tds os dispositivos
-            
-            return img
-        }() //clousures: uma funçao que só iremos utilizar uma vez e como boa pratica colocamos dentro dessa func anonima utilizando () para chamar ela mesma no final
-        
+        let loginImg = ImageDefault(image: "logo-login")
         //label
-        let imgLabel : UILabel = {
-            let label = UILabel();
-            label.text = "Registre e gerencie as ocorrências do seu IF";
-            label.textColor = UIColor(_colorLiteralRed: 138/255, green: 138/255, blue: 142/255, alpha: 1);
-            label.textAlignment = .center;
-            label.font = UIFont(name: "SPRoDisplay-Light", size: 17);
-            label.translatesAutoresizingMaskIntoConstraints = false;
-            
-            return label
-        }();
-        
+        let imgLabel = LabelDefault(text: "Registre e gerencie as ocorrências do seu IF", size: 17, alignment: .center)
         //textfield
-        
-        let emailtxt : UITextField = {
-            let txt = UITextField();
-            txt.backgroundColor = .white;
-            txt.placeholder = "   E-mail";
-            txt.layer.cornerRadius = 16; // arredonda os lados
-            txt.translatesAutoresizingMaskIntoConstraints = false;
-            
-            return txt
-            
-        }()
-        
-        let senhatxt : UITextField = {
-            let txt = UITextField();
-            txt.backgroundColor = .white;
-            txt.placeholder = "    Senha";
-            txt.layer.cornerRadius = 16; // arredonda os lados
-            txt.translatesAutoresizingMaskIntoConstraints = false;
-            
-            return txt
-            
-        }()
+        let emailtxt = TextFieldDefault(placeholder: "   E-mail")
+        let senhatxt = TextFieldDefault(placeholder: "   Senha")
         
         //button
-        
-        let loginbtn : UIButton = {
-            let btn = UIButton();
-            btn.backgroundColor = .btnColor;
-            btn.setTitle("Logar", for: .normal);
-            btn.layer.cornerRadius = 16;
-            btn.translatesAutoresizingMaskIntoConstraints = false
-            return btn
-        }()
-        
-        let cadbtn : UIButton = {
-            let btn = UIButton();
-            btn.backgroundColor = .btnColor;
-            btn.setTitle("Cadastro", for: .normal);
-            btn.layer.cornerRadius = 16;
-            btn.translatesAutoresizingMaskIntoConstraints = false
-            return btn
-        }()
+        let loginbtn = ButtonDefault(button: "LOGIN")
+        let cadbtn = ButtonDefault(button: "CADASTRAR")
         
         //subview para aparecer na view
         self.addSubview(loginImg);
