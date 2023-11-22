@@ -22,6 +22,9 @@
 		A3E840E02B07E370001D0A87 /* ImageDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840DF2B07E370001D0A87 /* ImageDefault.swift */; };
 		A3E840E22B07E542001D0A87 /* LabelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840E12B07E542001D0A87 /* LabelDefault.swift */; };
 		A3E840E42B07E812001D0A87 /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840E32B07E812001D0A87 /* TextFieldDefault.swift */; };
+		A3E840F72B0E36C4001D0A87 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840F62B0E36C4001D0A87 /* RegisterView.swift */; };
+		A3E840F92B0E36E0001D0A87 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840F82B0E36E0001D0A87 /* RegisterViewController.swift */; };
+		A3E840FB2B0E37F7001D0A87 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E840FA2B0E37F7001D0A87 /* RegisterCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		A3E840DF2B07E370001D0A87 /* ImageDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDefault.swift; sourceTree = "<group>"; };
 		A3E840E12B07E542001D0A87 /* LabelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDefault.swift; sourceTree = "<group>"; };
 		A3E840E32B07E812001D0A87 /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
+		A3E840F62B0E36C4001D0A87 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A3E840F82B0E36E0001D0A87 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A3E840FA2B0E37F7001D0A87 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 			children = (
 				A31CE50E2B0155070077D156 /* Coordinator.swift */,
 				A31CE5102B01551F0077D156 /* LoginCoordinator.swift */,
+				A3E840FA2B0E37F7001D0A87 /* RegisterCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -118,7 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				A31CE50A2B0154D30077D156 /* LoginView.swift */,
+				A3E840F62B0E36C4001D0A87 /* RegisterView.swift */,
 				A31CE50C2B0154E30077D156 /* LoginViewController.swift */,
+				A3E840F82B0E36E0001D0A87 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,16 +224,19 @@
 			files = (
 				A31CE4B92AFE5AF80077D156 /* ViewController.swift in Sources */,
 				A3E840E02B07E370001D0A87 /* ImageDefault.swift in Sources */,
+				A3E840F72B0E36C4001D0A87 /* RegisterView.swift in Sources */,
 				A3E840DC2B07E106001D0A87 /* ButtonDefault.swift in Sources */,
 				A3E840BF2B0269A0001D0A87 /* Color+.swift in Sources */,
 				A31CE4B52AFE5AF80077D156 /* AppDelegate.swift in Sources */,
 				A3E840E22B07E542001D0A87 /* LabelDefault.swift in Sources */,
 				A31CE5112B01551F0077D156 /* LoginCoordinator.swift in Sources */,
 				A31CE50F2B0155070077D156 /* Coordinator.swift in Sources */,
+				A3E840F92B0E36E0001D0A87 /* RegisterViewController.swift in Sources */,
 				A31CE50B2B0154D30077D156 /* LoginView.swift in Sources */,
 				A31CE50D2B0154E30077D156 /* LoginViewController.swift in Sources */,
 				A31CE4B72AFE5AF80077D156 /* SceneDelegate.swift in Sources */,
 				A3E840E42B07E812001D0A87 /* TextFieldDefault.swift in Sources */,
+				A3E840FB2B0E37F7001D0A87 /* RegisterCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

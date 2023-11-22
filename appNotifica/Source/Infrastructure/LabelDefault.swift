@@ -24,6 +24,7 @@ class LabelDefault:UILabel {
         self.textAlignment = alignment;
         self.font = UIFont.systemFont(ofSize: CGFloat(size));
         self.translatesAutoresizingMaskIntoConstraints = false;
+        self.numberOfLines = 0;
     }
     
 }
