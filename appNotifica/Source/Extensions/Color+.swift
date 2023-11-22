@@ -14,6 +14,6 @@ extension UIColor {
     //fazendo refernciando no assets pois tem o tema escuro
     static let customlabelColor = UIColor(named: "customlabelColor") ?? .white
     static let placeholderColor = UIColor(named: "placeholderColor") ?? .white
-    static let backgroundColor = UIColor(named: "backgrondColor") ?? .white
-    
+    static let backgroundColor = UIColor(named: "backgroundColor") ?? .white
+
 }

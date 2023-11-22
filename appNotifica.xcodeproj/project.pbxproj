@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				A31CE5062B0154780077D156 /* Source */,
-				A31CE5042B0154590077D156 /* Resource */,
 				A31CE4C22AFE5AFB0077D156 /* Info.plist */,
+				A31CE5042B0154590077D156 /* Resource */,
 			);
 			path = appNotifica;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 		A31CE5062B0154780077D156 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A31CE5092B0154AE0077D156 /* Controller */,
 				A3E840DA2B07E0DC001D0A87 /* Infrastructure */,
 				A3E840BD2B026976001D0A87 /* Extensions */,
-				A31CE5092B0154AE0077D156 /* Controller */,
 				A31CE5082B0154930077D156 /* Coordinator */,
 			);
 			path = Source;

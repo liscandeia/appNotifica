@@ -14,7 +14,7 @@ class LoginView:UIView  {
     //:UIView é chamando o frame que me libera os componentes pois estou dizendo que ela herda de UIView ela é filha
     override init(frame: CGRect) {
         super.init(frame: frame);
-        self.backgroundColor = .white
+        self.backgroundColor = .backgroundColor;
         setupVisualElements();
     }
     //precisamos definir pois pode resolver algo com o sboard, ele obriga, s[o apertar em fix

@@ -23,6 +23,5 @@ class LoginViewController: UIViewController {
         super.viewDidLoad();
         self.title = "Login"; //self. e opcional
         self.navigationController?.navigationBar.prefersLargeTitles = true;
-        view.tintColor = .white
     }
 }
