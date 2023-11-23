@@ -14,7 +14,7 @@ class ButtonDefault:UIButton {
     }
     private func initButtonDefault (button: String){
             self.backgroundColor = .buttonColor;
-            self.setTitle("Logar", for: .normal);
+            self.setTitle(button, for: .normal);
             self.layer.cornerRadius = 16;
             self.translatesAutoresizingMaskIntoConstraints = false
     }

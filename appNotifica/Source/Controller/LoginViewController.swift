@@ -12,11 +12,21 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+
+    //MARK: -  Clouseres
+    var onRegisterTap: (() -> Void)?
     //var para receber a view que criamos
-    var viewMain = LoginView();
+    lazy var viewLogin: LoginView = {
+            let loginView = LoginView()
+            loginView.onRegisterTap = {
+                self.onRegisterTap?()
+            }
+            
+            return loginView
+        }()
     //func para chamar a view, por default ela vem na main entao mudamos para chamar nossa view
     override func loadView() {
-        self.view = viewMain; //dizendo que nossa view é da var que salvei com o nome de viewMain
+        self.view = viewLogin; //dizendo que nossa view é da var que salvei com o nome de viewMain
     }
     //evento para aparecer texto do paragrafo
     override func viewDidLoad() {

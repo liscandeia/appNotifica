@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit //sempre importar é para desenhar a tela
-//MARK: - Inicializadores
+//MARK: - Initialize
 class LoginView:UIView  {
     //:UIView é chamando o frame que me libera os componentes pois estou dizendo que ela herda de UIView ela é filha
     override init(frame: CGRect) {
@@ -21,6 +21,8 @@ class LoginView:UIView  {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented");
     }
+    //MARK: -  Clouseres
+     var onRegisterTap: (() -> Void)?
     //MARK: - Setup elementos visuais
     func setupVisualElements(){
         
@@ -43,6 +45,8 @@ class LoginView:UIView  {
         self.addSubview(senhatxt);
         self.addSubview(loginbtn);
         self.addSubview(cadbtn);
+        cadbtn.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
+
         
         //onde vai ficar na tela os componentes
         
@@ -77,9 +81,11 @@ class LoginView:UIView  {
             cadbtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             cadbtn.heightAnchor.constraint(equalToConstant: 60)
             
-            
-            
-            
         ])
     }
+    //MARK: - Actions
+        @objc
+        private func registerTap(){
+            onRegisterTap?()
+        }
 }
