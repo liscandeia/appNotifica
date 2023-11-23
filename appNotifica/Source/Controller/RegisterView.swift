@@ -17,6 +17,8 @@ class RegisterView: UIView{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    var onLoginTap : (()-> Void)?
     func setupVisualElements () {
         let label = LabelDefault(text: "Entre com seu e-mail e senha para se registrar.", size: 20, alignment: .left)
         let emailtxt = TextFieldDefault(placeholder: "   E-mail")
@@ -33,8 +35,8 @@ class RegisterView: UIView{
         self.addSubview(senharepetetxt)
         self.addSubview(cadbtn)
         self.addSubview(loginbtn)
-        
-        
+      
+        loginbtn.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: self.topAnchor, constant: 188),
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
@@ -66,5 +68,9 @@ class RegisterView: UIView{
             loginbtn.heightAnchor.constraint(equalToConstant: 60),
             
         ])
+    }
+    @objc
+    private func loginTap(){
+        onLoginTap?()
     }
 }
