@@ -15,12 +15,16 @@ class LoginViewController: UIViewController {
 
     //MARK: -  Clouseres
     var onRegisterTap: (() -> Void)?
+    var onLoginTap: (() -> Void)?
     //var para receber a view que criamos
     lazy var viewLogin: LoginView = {
             let loginView = LoginView()
             loginView.onRegisterTap = {
                 self.onRegisterTap?()
             }
+        loginView.onLoginTap = {
+                self.onLoginTap?()
+        }
             
             return loginView
         }()

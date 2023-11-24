@@ -22,7 +22,7 @@ class RegisterCoordinator: Coordinator{
     }
     
     func goToLogin(){
-        let coordinator = LoginCoordinator(navigationController: navigationController)
-        coordinator.start()
+        //mudando para .pop para poder voltar para a pag ao invés de dar um push para rederizar
+        self.navigationController.popViewController(animated: true)
     }
 }

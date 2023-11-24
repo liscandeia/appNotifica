@@ -23,6 +23,7 @@ class LoginView:UIView  {
     }
     //MARK: -  Clouseres
      var onRegisterTap: (() -> Void)?
+     var onLoginTap: (() -> Void)?
     //MARK: - Setup elementos visuais
     func setupVisualElements(){
         
@@ -46,6 +47,7 @@ class LoginView:UIView  {
         self.addSubview(loginbtn);
         self.addSubview(cadbtn);
         cadbtn.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
+        loginbtn.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
 
         
         //onde vai ficar na tela os componentes
@@ -88,4 +90,8 @@ class LoginView:UIView  {
         private func registerTap(){
             onRegisterTap?()
         }
+        @objc
+    private func loginTap(){
+        onLoginTap?()
+    }
 }
