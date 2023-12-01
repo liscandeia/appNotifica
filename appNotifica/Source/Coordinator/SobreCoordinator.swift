@@ -1,22 +1,22 @@
 //
-//  HomeCoordinator.swift
+//  SobreCoordinator.swift
 //  appNotifica
 //
-//  Created by IFB-BIOTIC-25 on 24/11/23.
+//  Created by IFB-BIOTIC-25 on 01/12/23.
 //
 
 import Foundation
-
 import UIKit
-class HomeCoordinator: Coordinator {
+
+class SobreCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     
-    lazy var homeViewController: HomeViewController = {
-        let viewController = HomeViewController()
+    lazy var sobreViewController: SobreViewController = {
+        let viewController = SobreViewController()
         //adiciona o nome home na tabbar
-        viewController.tabBarItem.title = "Home"
-        viewController.tabBarItem.image = UIImage(systemName: "homekit")
+        viewController.tabBarItem.title = "Sobre"
+        viewController.tabBarItem.image = UIImage(systemName: "info.square")
         return viewController
     }()
     

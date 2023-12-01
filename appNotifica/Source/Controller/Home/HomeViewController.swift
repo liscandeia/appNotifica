@@ -21,6 +21,6 @@ class HomeViewController: ViewControllerDeafault{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-            self.title = "Home"; //self. e opcional
+            self.title = "Ocorrências"; //self. e opcional
     }
 }
