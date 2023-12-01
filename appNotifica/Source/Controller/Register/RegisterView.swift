@@ -7,28 +7,30 @@
 
 import Foundation
 import UIKit
-class RegisterView: UIView{
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .backgroundColor;
-        setupVisualElements();
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+class RegisterView: ViewDefault{
+
+    //MARK - Clousers
     var onLoginTap : (()-> Void)?
-    func setupVisualElements () {
-        let label = LabelDefault(text: "Entre com seu e-mail e senha para se registrar.", size: 20, alignment: .left)
-        let emailtxt = TextFieldDefault(placeholder: "   E-mail")
-        let senhatxt = TextFieldDefault(placeholder: "   Senha")
-        let senharepetetxt = TextFieldDefault(placeholder:"        Confirmar senha")
-
-        let cadbtn = ButtonDefault(button: "CADASTRAR")
-        let loginbtn = ButtonDefault(button: "LOGIN")
-
-        
+    let label = LabelDefault(text: "Entre com seu e-mail e senha para se registrar.", size: 20, alignment: .left)
+    let emailtxt = TextFieldDefault(placeholder: "   E-mail", keyBoardType: .emailAddress, returnKeyType: .next)
+    let senhatxt: TextFieldDefault = {
+        let text = TextFieldDefault(placeholder: "   Senha",keyBoardType: .emailAddress, returnKeyType: .done)
+        text.isSecureTextEntry = true;
+        return text;
+    }()
+    let senharepetetxt: TextFieldDefault = {
+        let text = TextFieldDefault(placeholder: "        Confirmar senha",keyBoardType: .emailAddress, returnKeyType: .done)
+        text.isSecureTextEntry = true;
+        return text;
+    }()
+    let cadbtn = ButtonDefault(button: "CADASTRAR")
+    let loginbtn = ButtonDefault(button: "LOGIN")
+    override func setupVisualElements () {
+        super.setupVisualElements();
+        emailtxt.delegate = self;
+        senhatxt.delegate = self;
+        senharepetetxt.delegate = self;
+    
         self.addSubview(label)
         self.addSubview(emailtxt)
         self.addSubview(senhatxt)
@@ -74,3 +76,17 @@ class RegisterView: UIView{
         onLoginTap?()
     }
 }
+extension RegisterView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailtxt {
+            self.senhatxt.becomeFirstResponder()
+        }else if textField == senhatxt{
+            self.senharepetetxt.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+
+}
+

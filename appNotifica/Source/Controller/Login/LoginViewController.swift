@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: ViewControllerDeafault {
 
     //MARK: -  Clouseres
     var onRegisterTap: (() -> Void)?
@@ -34,8 +34,7 @@ class LoginViewController: UIViewController {
     }
     //evento para aparecer texto do paragrafo
     override func viewDidLoad() {
-        super.viewDidLoad();
+        super.viewDidLoad()
         self.title = "Logar"; //self. e opcional
-        self.navigationController?.navigationBar.prefersLargeTitles = true;
     }
 }

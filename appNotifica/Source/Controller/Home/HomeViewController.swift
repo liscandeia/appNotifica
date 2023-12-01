@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: ViewControllerDeafault{
 
     lazy var viewHome:HomeView = {
         let homeView = HomeView()
@@ -20,8 +20,7 @@ class HomeViewController: UIViewController {
         self.view = viewHome;
     }
     override func viewDidLoad() {
-            super.viewDidLoad();
+        super.viewDidLoad()
             self.title = "Home"; //self. e opcional
-            self.navigationController?.navigationBar.prefersLargeTitles = true;
     }
 }

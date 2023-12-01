@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: ViewControllerDeafault {
     var onLoginTap: (()-> Void)?
     lazy var viewRegister:RegisterView = {
         let registerView = RegisterView()
@@ -22,9 +22,9 @@ class RegisterViewController: UIViewController {
         self.view = viewRegister;
     }
     override func viewDidLoad() {
-            super.viewDidLoad();
-            self.title = "Registrar"; //self. e opcional
-            self.navigationController?.navigationBar.prefersLargeTitles = true;
+        super.viewDidLoad();
+        
+        self.title = "Registrar"; //self. e opcional
     }
 }
     

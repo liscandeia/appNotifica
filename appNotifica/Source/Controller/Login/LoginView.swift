@@ -9,36 +9,31 @@
 
 import Foundation
 import UIKit //sempre importar é para desenhar a tela
-//MARK: - Initialize
-class LoginView:UIView  {
-    //:UIView é chamando o frame que me libera os componentes pois estou dizendo que ela herda de UIView ela é filha
-    override init(frame: CGRect) {
-        super.init(frame: frame);
-        self.backgroundColor = .backgroundColor;
-        setupVisualElements();
-    }
-    //precisamos definir pois pode resolver algo com o sboard, ele obriga, s[o apertar em fix
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented");
-    }
+class LoginView:ViewDefault  {
+    
     //MARK: -  Clouseres
      var onRegisterTap: (() -> Void)?
      var onLoginTap: (() -> Void)?
-    //MARK: - Setup elementos visuais
-    func setupVisualElements(){
-        
-        //imagem
-        let loginImg = ImageDefault(image: "logo-login")
-        //label
-        let imgLabel = LabelDefault(text: "Registre e gerencie as ocorrências do seu IF", size: 17, alignment: .center)
-        //textfield
-        let emailtxt = TextFieldDefault(placeholder: "   E-mail")
-        let senhatxt = TextFieldDefault(placeholder: "   Senha")
-        
-        //button
-        let loginbtn = ButtonDefault(button: "LOGIN")
-        let cadbtn = ButtonDefault(button: "CADASTRAR")
-        
+    //MARK: - Propriets
+    //imagem
+    let loginImg = ImageDefault(image: "logo-login")
+    //label
+    let imgLabel = LabelDefault(text: "Registre e gerencie as ocorrências do seu IF", size: 17, alignment: .center)
+    //textfield
+    let emailtxt = TextFieldDefault(placeholder: "   E-mail", keyBoardType: .emailAddress, returnKeyType: .next)
+    let senhatxt: TextFieldDefault = {
+        let text = TextFieldDefault(placeholder: "   Senha",keyBoardType: .emailAddress, returnKeyType: .done)
+        text.isSecureTextEntry = true;
+        return text;
+    }()
+    //button
+    let loginbtn = ButtonDefault(button: "LOGIN")
+    let cadbtn = ButtonDefault(button: "CADASTRAR")
+    
+    override func setupVisualElements(){
+        super.setupVisualElements();
+        emailtxt.delegate = self;
+        senhatxt.delegate = self;
         //subview para aparecer na view
         self.addSubview(loginImg);
         self.addSubview(imgLabel);
@@ -48,11 +43,8 @@ class LoginView:UIView  {
         self.addSubview(cadbtn);
         cadbtn.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
         loginbtn.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
-
         
-        //onde vai ficar na tela os componentes
-        
-        //MARK: - Ativando elementos
+        //MARK: - Init
         NSLayoutConstraint.activate([
             loginImg.topAnchor.constraint(equalTo: self.topAnchor, constant: 228),
             loginImg.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -94,4 +86,15 @@ class LoginView:UIView  {
     private func loginTap(){
         onLoginTap?()
     }
+}
+extension LoginView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailtxt {
+            self.senhatxt.becomeFirstResponder()
+        }else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+
 }
