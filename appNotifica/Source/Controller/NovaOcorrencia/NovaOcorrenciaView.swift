@@ -24,12 +24,16 @@ class NovaOcorrenciaView: ViewDefault {
     var onCameraTap:(()->Void)?
     
     lazy var imagem: UIImageView = {
-        let view = UIImageView ()
-        view.image = UIImage(named: "imagemCamera")
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    } ()
+         let view = UIImageView ()
+         view.image = UIImage(named: "imagemCamera")
+         
+         let tapGR = UITapGestureRecognizer(target: self, action: #selector(cameraTap))
+         view.addGestureRecognizer(tapGR)
+         view.isUserInteractionEnabled = true
+         
+         view.translatesAutoresizingMaskIntoConstraints = false
+         return view
+     } ()
     
     lazy var titleTextField = TextFieldDefault(placeholder: "Título ", keyBoardType: .default, returnKeyType: .next)
     
