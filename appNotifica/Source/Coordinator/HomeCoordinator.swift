@@ -35,4 +35,8 @@ class HomeCoordinator: Coordinator {
         let navigationNovaOcorrencia = UINavigationController(rootViewController: viewController)
         navigationController.present(navigationNovaOcorrencia, animated: true)
     }
+    func continueAfterNovaOcorrencia(){
+        navigationController.dismiss(animated: true)
+        homeViewController.refreshData()
+    }
 }

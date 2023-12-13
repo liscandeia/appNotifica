@@ -16,8 +16,6 @@ class SobreViewController: ViewControllerDeafault {
     
     lazy var sobreView: SobreView = {
         let sobreView = SobreView()
-        
-        
         return sobreView
     }()
     

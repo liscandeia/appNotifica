@@ -19,22 +19,27 @@ class HomeViewController: ViewControllerDeafault{
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var viewHome:HomeView = {
+    lazy var homeView:HomeView = {
         let homeView = HomeView(viewModel: viewModel)
 
         return homeView
     }()
     
     override func loadView() {
-        self.view = viewHome;
+        self.view = homeView;
     }
     @objc
     func handleAdd(){
         viewModel.didTapAdd()
     }
+    func refreshData (){
+        viewModel.fetchData()
+        homeView.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-            self.title = "Ocorrências"; //self. e opcional
+            self.title = "Ocorrências";
+        refreshData()
         navigationItem.rightBarButtonItem = .init(title: "Add", style: .plain, target: self, action: #selector(handleAdd))
 
     }

@@ -96,8 +96,18 @@ class NovaOcorrenciaView: ViewDefault {
             saveButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
             
         ])
+        saveButton.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
         
     }
+    @objc
+       func handleSave() {
+           let title = titleTextField.text ?? ""
+           let description = descriptionTextField.text ?? ""
+           let location = localizationTextField.text ?? ""
+           let status = statusTextField.text ?? ""
+           let ocorrencia = Ocorrencia(title: title, description: description, location: location, status: status)
+           viewModel.didTapSave(ocorrencia: ocorrencia)
+       }
     @objc
     private func cameraTap(){
         self.onCameraTap?()

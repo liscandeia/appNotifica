@@ -11,14 +11,17 @@ class ViewControllerDeafault: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        self.navigationController?.navigationBar.prefersLargeTitles = true;
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.navigationBar.tintColor = .buttonColor
+        self.navigationController?.navigationBar.prefersLargeTitles=true
+                
+        //self.navigationItem.setHidesBackButton(true, animated: false)
         //para chamar o objeto que tira o teclado da tela
-        let tap : UITapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector (self.hideKeyBoardByTap))
+        let tap : UITapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector (self.hideKeyboardByTappingoutSide))
+
         self.view.addGestureRecognizer(tap)
     }
     @objc
-    func hideKeyBoardByTap(){
+    func hideKeyboardByTappingoutSide(){
         self.view.endEditing(true)
     }
 }
